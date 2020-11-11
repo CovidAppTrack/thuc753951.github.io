@@ -2,7 +2,7 @@
 
     "name": "A basic Program",
     "short_name": "Basic PWA",
-    "start_url":".",
+    "start_url":"http://127.0.0.1:5500/index.html",
     "display": "standalone",
     "orientation": "portrait",
     "background_color": "#ccc",
