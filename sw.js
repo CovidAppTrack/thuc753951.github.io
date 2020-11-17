@@ -1,4 +1,7 @@
 const staticCacheName = 'site-static'; // remember to change this name 'site-static' every time you change the files loaded in cache ex: 'site-static-v1'.... v2....v3...etc
+
+const dynamicCache = 'site-dynamic'; // a cache for automatically saving pages the user has already visited to let them browse offline
+
 // opens a caches with name site-static if it exists
 const assets = [ //assests to be loaded into memory
     '/',
@@ -49,8 +52,14 @@ self.addEventListener('fetch',evt => {
     //console.log('fetch event',evt);
     evt.respondWith(
         caches.match(evt.request).then(cacheRes=>{
-            return cacheRes || fetch(evt.request);  // return info in caches or the regular fetch event using online means
+             // return info in caches or the regular fetch event using online
+            return cacheRes || fetch(evt.request).then(fetchRes => {
+                return caches.open(dynamicCache).then(cache =>{
+                    cache.put(evt.request.url, fetchRes.clone());
+                    return fetchRes;
+                })
+            });
         })
-    )
+    );
 });
 
