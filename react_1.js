@@ -1,8 +1,10 @@
+var img_list = ["/images/book.png", "/images/arrow-left.svg", "/images/arrow-right.svg", "/images/PhillyMap.png.png"]
+
 class FeatureTile extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            img: "/images/book.png",
+            img: img_list[0],
             ID: this.props.ID,
             onClick: this.props.onClick,
         };
@@ -21,8 +23,8 @@ class FeatureTile extends React.Component{
 function Arrows(props){
     return(
         <div className="arrows">
-            <img style={{float:'left'}} src="/images/arrow-left.svg"/>
-            <img style={{float:'right'}} src="/images/arrow-right.svg"/>
+            <img style={{float:'left'}} src={img_list[1]}/>
+            <img style={{float:'right'}} src={img_list[2]}/>
         </div>
     );
 }
@@ -31,7 +33,7 @@ class FeatureContainer extends React.Component {
     renderTile(i){
         return(
             <FeatureTile
-            img = "/images/book.png"
+            img = {img_list[0]}
             ID = {i}
             onClick = {() => {
                 var modal = document.getElementsByClassName("myModal")[0];
@@ -85,7 +87,7 @@ class PhillyMap extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            img : "/images/PhillyMap.png.png",
+            img : img_list[3],
         };
     }
     render(){
@@ -114,8 +116,10 @@ class CovidPage extends React.Component{
         return(
             <div id="renderPage">
                 <Header />
-                <PhillyMap />
-                <FeatureContainer />
+                <div className = "content">
+                    <PhillyMap />
+                    <FeatureContainer />
+                </div>
                 <ModalWindow />
             </div>
         );
