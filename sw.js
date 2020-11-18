@@ -6,11 +6,14 @@ const dynamicCache = 'site-dynamic'; // a cache for automatically saving pages t
 const assets = [ //assests to be loaded into memory
     '/',
     '/index.html',
+    '/About.html',
     '/js/app.js',
+    '/react_1.js',
     '/UI.js',
     '/draft1.css',
     '/css/app.css',
-    '/css/style.css',
+    '/style.css',
+    '/style_mediaQ.css',
     '/images/book.png',
     '/images/PhillyMap.png.png',
     '/images/presentation.png',
@@ -62,4 +65,3 @@ self.addEventListener('fetch',evt => {
         })
     );
 });
-

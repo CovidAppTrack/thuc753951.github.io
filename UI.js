@@ -13,6 +13,7 @@ let data;
     }
 })()
 
+
 function featureFunction(num){
     num = num -1;
     var modal = document.getElementsByClassName("myModal")[0];
@@ -55,7 +56,6 @@ function injectFunction(num){
         default:
             content = "THIS IS A FEATURE";
     }
-    
     inject.innerHTML = content;
 }
 
