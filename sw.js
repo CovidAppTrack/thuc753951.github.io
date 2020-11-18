@@ -11,7 +11,6 @@ const assets = [ //assests to be loaded into memory
     '/react_1.js',
     '/UI.js',
     '/draft1.css',
-    '/css/app.css',
     '/style.css',
     '/style_mediaQ.css',
     '/images/book.png',
