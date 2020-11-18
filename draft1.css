@@ -15,7 +15,7 @@ html, body{
 
     display: grid;
     grid-template-columns: auto auto auto auto;
-    grid-gap: 50px 50px;
+    grid-gap: 0px 50px;
     
 }
 .container{
@@ -194,38 +194,21 @@ END OF MODAL BOX TESTING SECTION
         float:none;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 5%;
         width: auto;
-        padding: 10%;
         text-align: center;
     }
     .fTile{
         text-align: center;
-        max-height: auto;
+        max-height: 65%;
         max-width: 80%;
         border: 2px solid black;
-        box-shadow: 0px 0px 5px black;  /* give a little "3D"  effect to the bottom of the title area */
+        box-shadow: 0px 0px 5px black;  
         
         font-size: x-large;
         font-weight: strong;
         margin-top: 10%;
         margin-bottom: 10%;
     }
-
-    /*.map{
-    position: relative;
-    float: left;
-    margin-right: auto;
-    margin-left: 5%;
-    margin-top: 6%;
-    width: 40%;
-    max-height: auto;
-    padding: 10px;
-    text-align: center;
-
-    border: 2px solid black;
-}*/
-
     .map{
         position:relative;
         float: none;
@@ -240,5 +223,6 @@ END OF MODAL BOX TESTING SECTION
 
     .grid{
         grid-template-columns: auto auto auto auto auto auto auto;
+        grid-gap: 0px 0px;
     }
 }
