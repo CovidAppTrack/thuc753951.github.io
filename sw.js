@@ -25,6 +25,10 @@ const assets = [ //assests to be loaded into memory
     'https://fonts.googleapis.com/css?family=Bitter',
     'https://fonts.gstatic.com/s/bitter/v16/raxhHiqOu8IVPmnRc6SY1KXhnF_Y8fbfOLXOXWh2.woff2',
     'https://fonts.gstatic.com/s/bitter/v16/raxhHiqOu8IVPmnRc6SY1KXhnF_Y8fbfOLjOXQ.woff2',
+    'https://unpkg.com/react@17/umd/react.development.js',
+    'https://unpkg.com/react-dom@17/umd/react-dom.development.js',
+    'https://unpkg.com/babel-standalone@latest/babel.min.js',
+    'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css',
     
 ];
 
