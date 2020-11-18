@@ -55,7 +55,6 @@ function injectFunction(num){
         default:
             content = "THIS IS A FEATURE";
     }
-    
     inject.innerHTML = content;
 }
 

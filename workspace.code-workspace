@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\VSCode Workspace\\Covid Workspace"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "thuc753951.github.io"
+	}
+}

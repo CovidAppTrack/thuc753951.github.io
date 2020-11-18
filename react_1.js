@@ -12,8 +12,8 @@ class FeatureTile extends React.Component{
 
     render(){
         return(
-            <div className = "fTile">
-                <div className ="fTitle">Feature {this.props.ID}</div>
+            <div className = "featureTile">
+                <div className ="featureTitle">Feature {this.props.ID}</div>
                 <img src={this.state.img} onClick = {() => this.state.onClick()}></img>
             </div>
         );
@@ -43,6 +43,7 @@ class FeatureContainer extends React.Component {
                 var span = document.getElementsByClassName("close")[0];
                 // When the user clicks the button, open the modal
                 modal.style.display = "block";
+                console.log(i)
                 injectFunction(i);
                 // When the user clicks on <span> (x), close the modal
                 span.onclick = function() {
@@ -61,15 +62,17 @@ class FeatureContainer extends React.Component {
     }
     render(){
         return(
-            <div className="grid container">
+            <div className="featureContainer">
                 <Arrows />
-                {this.renderTile(0)}
-                {this.renderTile(1)}
-                {this.renderTile(2)}
-                {this.renderTile(3)}
-                {this.renderTile(4)}
-                {this.renderTile(5)}
-                {this.renderTile(6)}
+                <div className = "featureGrid">
+                    {this.renderTile(0)}
+                    {this.renderTile(1)}
+                    {this.renderTile(2)}
+                    {this.renderTile(3)}
+                    {this.renderTile(4)}
+                    {this.renderTile(5)}
+                    {this.renderTile(6)}
+                </div>
             </div>
         );
     }
@@ -92,7 +95,7 @@ class PhillyMap extends React.Component {
     }
     render(){
         return(
-            <div className="map">
+            <div className="mapContainer">
                 <img className="mapImage" src = {this.state.img} />
             </div>
         );
