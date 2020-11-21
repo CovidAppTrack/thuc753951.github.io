@@ -1,10 +1,11 @@
-var img_list = ["/images/book.png", "/images/arrow-left.svg", "/images/arrow-right.svg", "/images/PhillyMap.png.png"]
+var img_list = ["/images/tombstone.png", "/images/book.png", "/images/sex.png", "/images/medical-record.png"]
+var img_const = ["/images/arrow-left.svg", "/images/arrow-right.svg", "/images/PhillyMap.png.png"]
 
 class FeatureTile extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            img: img_list[0],
+            img: this.props.img,
             ID: this.props.ID,
             onClick: this.props.onClick,
         };
@@ -23,17 +24,18 @@ class FeatureTile extends React.Component{
 function Arrows(props){
     return(
         <div className="arrows">
-            <img style={{float:'left'}} src={img_list[1]}/>
-            <img style={{float:'right'}} src={img_list[2]}/>
+            <img style={{float:'left'}} src={img_const[0]}/>
+            <img style={{float:'right'}} src={img_const[1]}/>
         </div>
     );
 }
 
 class FeatureContainer extends React.Component {
     renderTile(i){
+        console.log(i);
         return(
             <FeatureTile
-            img = {img_list[0]}
+            img = {img_list[i]}
             ID = {i}
             onClick = {() => {
                 var modal = document.getElementsByClassName("myModal")[0];
@@ -69,9 +71,9 @@ class FeatureContainer extends React.Component {
                     {this.renderTile(1)}
                     {this.renderTile(2)}
                     {this.renderTile(3)}
-                    {this.renderTile(4)}
-                    {this.renderTile(5)}
-                    {this.renderTile(6)}
+                    {this.renderTile(3)}
+                    {this.renderTile(3)}
+                    {this.renderTile(3)}
                 </div>
             </div>
         );
@@ -90,7 +92,7 @@ class PhillyMap extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            img : img_list[3],
+            img : img_const[2],
         };
     }
     render(){

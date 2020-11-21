@@ -12,30 +12,6 @@ let data;
         console.log(data["case 1"]["count"]);
     }
 })()
-
-function featureFunction(num){
-    num = num -1;
-    var modal = document.getElementsByClassName("myModal")[0];
-    // Get the button that opens the modal
-    var btn = document.getElementsByClassName("feature") 
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-    // When the user clicks the button, open the modal 
-    btn[num].onclick = function() {
-    modal.style.display = "block";
-    }
-    injectFunction(num);
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-            }
-    }
-}
 function injectFunction(num){
     var content;
     var inject = document.getElementsByClassName("txtSection")[0];
