@@ -1,6 +1,25 @@
 var img_list = ["/images/tombstone.png", "/images/book.png", "/images/sex.png", "/images/medical-record.png"]
 var img_const = ["/images/arrow-left.svg", "/images/arrow-right.svg", "/images/PhillyMap.png.png"]
 
+class Navbar extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            aboutClick : () => {ReactDOM.render(<AboutPage />, document.getElementById('root'))},
+            homeClick : () => {ReactDOM.render(<CovidPage />, document.getElementById('root'))},
+        };
+    }
+    render(){
+        //NEED TO MAKE ONCLICK FUNCTION TO CHANGE THE PAGE CONTENT
+        return(
+            <div className="navbar">
+                <a onClick = {this.state.homeClick}>Home</a>
+                <a onClick = {this.state.aboutClick}>About</a>
+            </div>
+        );
+    }
+}
+
 class FeatureTile extends React.Component{
     constructor(props){
         super(props);
@@ -24,15 +43,14 @@ class FeatureTile extends React.Component{
 function Arrows(props){
     return(
         <div className="arrows">
-            <img style={{float:'left'}} src={img_const[0]}/>
-            <img style={{float:'right'}} src={img_const[1]}/>
+            <img id = "leftScroll" style={{float:'left'}} src={img_const[0]}/>
+            <img id = "rightScroll" style={{float:'right'}} src={img_const[1]}/>
         </div>
     );
 }
 
 class FeatureContainer extends React.Component {
     renderTile(i){
-        console.log(i);
         return(
             <FeatureTile
             img = {img_list[i]}
@@ -60,7 +78,6 @@ class FeatureContainer extends React.Component {
             }}
             />
         );
-
     }
     render(){
         return(
@@ -97,7 +114,7 @@ class PhillyMap extends React.Component {
     }
     render(){
         return(
-            <div className="mapContainer">
+            <div className="contentContainer">
                 <img className="mapImage" src = {this.state.img} />
             </div>
         );
@@ -126,8 +143,21 @@ class CovidPage extends React.Component{
                     <FeatureContainer />
                 </div>
                 <ModalWindow />
+                <Navbar />
             </div>
         );
     }
 }
+
+class AboutPage extends React.Component{
+    render(){
+        return(
+            <div>
+                <h1>Temporary About</h1>
+                <Navbar />
+            </div>
+        );
+    }
+}
+//ReactDOM.render(<AboutPage />, document.getElementById('root'))
 ReactDOM.render(<CovidPage />, document.getElementById('root'));
